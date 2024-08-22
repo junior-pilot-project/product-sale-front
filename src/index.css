@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  background-color: #000000;
+  color: #fff;
+}
+
+.wrap {
+  margin: 0 auto;
+  padding: 12px;
+  max-width: 1080px;
+  width: 100%;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  top: 0;
+  height: 147px;
+  padding: 16px;
+  font-weight: 700;
+  background-color: #c5c5c5;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  top: 0;
+  height: 137px;
+  padding: 16px;
+  font-weight: 700;
+  background-color: #c5c5c5;
+}

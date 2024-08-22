@@ -1,6 +1,8 @@
 const Sample = () => {
   return (
-     <>셈플페이지</>
+    <>
+      <div style={{ height: "2000px" }}>영역</div>
+    </>
   );
 };
 

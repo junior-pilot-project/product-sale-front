@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <header>
-      <h1>this is header</h1>
+      <div className="wrap">header 영역</div>
     </header>
   );
 };
