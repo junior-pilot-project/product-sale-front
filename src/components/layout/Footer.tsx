@@ -1,7 +1,9 @@
 const Footer = () => {
   return (
     <footer>
-      <div className="wrap">Footer 영역</div>
+      <div style={{ textAlign: "center", backgroundColor: "black" }}>
+          ©neoPr. All rights reserved. 
+      </div>
     </footer>
   );
 };

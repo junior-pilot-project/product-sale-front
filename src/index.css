@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: #000000;
+  /* background-color: #000000; */
   color: #fff;
 }
 
@@ -15,10 +15,9 @@ header {
   position: relative;
   width: 100%;
   top: 0;
-  height: 147px;
   padding: 16px;
   font-weight: 700;
-  background-color: #c5c5c5;
+  background-color: #ffffff;
 }
 
 footer {
@@ -28,5 +27,11 @@ footer {
   height: 137px;
   padding: 16px;
   font-weight: 700;
-  background-color: #c5c5c5;
+}
+
+.borderLine {
+  width: 100vw;
+  left: 0;
+  height: 1px;
+  background: #dfe3e8;
 }

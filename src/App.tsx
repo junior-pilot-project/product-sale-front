@@ -1,4 +1,4 @@
-import Sample from "pages/Sample";
+import Main from "pages/Main";
 import React, { Component } from "react";
 import { Route, Routes } from "react-router-dom";
 
@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <div>
         <Routes>
-          <Route path="/sample" element={<Sample />} />
+          <Route path="/" element={<Main />} />
         </Routes>
       </div>
     );
