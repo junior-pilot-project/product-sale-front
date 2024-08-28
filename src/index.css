@@ -1,9 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   /* background-color: #000000; */
   color: #fff;
 }
 
+button {
+  display: inline-block;
+}
 .wrap {
   margin: 0 auto;
   padding: 12px;
@@ -27,4 +34,8 @@ footer {
   height: 137px;
   padding: 16px;
   font-weight: 700;
+}
+
+button:disabled {
+  background-color: #000051;
 }
