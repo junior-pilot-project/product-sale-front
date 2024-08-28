@@ -8,9 +8,26 @@ body {
   color: #fff;
 }
 
-button {
+h1 {
+  color: black;
+}
+
+button,
+a {
   display: inline-block;
 }
+
+ul.pageList {
+  margin: 100px auto;
+  width: 500px;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  text-align: center;
+}
+
 .wrap {
   margin: 0 auto;
   padding: 12px;
