@@ -35,24 +35,6 @@ li {
   width: 100%;
 }
 
-header {
-  position: relative;
-  width: 100%;
-  top: 0;
-  padding: 16px;
-  font-weight: 700;
-  background-color: #ffffff;
-}
-
-footer {
-  position: relative;
-  width: 100%;
-  top: 0;
-  height: 137px;
-  padding: 16px;
-  font-weight: 700;
-}
-
 button:disabled {
   background-color: #000051;
 }
