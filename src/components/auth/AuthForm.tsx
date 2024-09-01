@@ -2,42 +2,13 @@ import axios from 'axios';
 import Button from 'components/common/Button';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import styled from 'styled-components';
+import styles from './Auth.module.css';
+import { AuthType, LoginType, textMap } from 'types/ConstType';
+
 /**
  * 회원가입 또는 로그인 폼
  *
  */
-
-const AuthFormBlock = styled.div`
-  width: 460px;
-  margin: 0 auto;
-  h3 {
-    text-align: left;
-    color: black;
-  }
-`;
-
-const StyledInput = styled.input`
-  display: inline-block;
-  border: 1px solid #ccc;
-  width: 100%;
-  height: 52px;
-  padding: 15px 15px;
-  margin: 5px 0;
-`;
-const textMap = {
-  login: '로그인',
-  register: '회원가입',
-};
-
-type AuthType = {
-  type: 'register' | 'login';
-};
-
-type LoginType = {
-  id: string;
-  password: string;
-};
 
 const AuthForm = ({ type }: AuthType) => {
   const text = textMap[type];
@@ -65,34 +36,38 @@ const AuthForm = ({ type }: AuthType) => {
   };
 
   return (
-    <AuthFormBlock>
+    <div className={`${styles.authFormBlock}`}>
       <h3>{type === 'register' ? '회원가입' : '로그인'}</h3>
       <form onSubmit={handleSubmit}>
-        <StyledInput
+        <input
+          className={`${styles.styledInput}`}
           name="id"
           placeholder="아이디"
           onChange={handleLoginInput}
-        ></StyledInput>
-        <StyledInput
+        ></input>
+        <input
+          className={`${styles.styledInput}`}
           name="password"
           placeholder="비밀번호"
           type="password"
           onChange={handleLoginInput}
-        ></StyledInput>
-        {type === 'register' && <StyledInput placeholder="이름"></StyledInput>}
+        ></input>
+        {type === 'register' && (
+          <input className={`${styles.styledInput}`} placeholder="이름"></input>
+        )}
         <Button
           disabled={
             answer.id.length === 0 ||
             answer.password.length === 0 ||
             status === 'submitting'
           }
-          style={{ width: '460px', height: '50px' }}
+          style={{ width: '428px', height: '50px' }}
         >
           {text}
         </Button>
         {type === 'login' && (
           <Button
-            style={{ width: '460px', height: '50px' }}
+            style={{ width: '428px', height: '50px' }}
             onClick={() => navigate('/register')}
           >
             회원가입
@@ -108,7 +83,7 @@ const AuthForm = ({ type }: AuthType) => {
           {status}
         </h4>
       </form>
-    </AuthFormBlock>
+    </div>
   );
 };
 

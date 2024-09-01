@@ -1,7 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './Header.module.css';
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/myPage');
+  };
+
   return (
     <>
       <header>
@@ -9,10 +15,10 @@ const Header = () => {
           <nav>
             <ul>
               <li>
-                <Link to="#">로그인</Link>
+                <Link to="/loginPage">로그인</Link>
               </li>
               <li>
-                <Link to="#">회원가입</Link>
+                <Link to="/register">회원가입</Link>
               </li>
               <li>
                 <Link to="#">고객센터</Link>
@@ -42,6 +48,7 @@ const Header = () => {
             alt="마이페이지"
             width="40px"
             height={'40px'}
+            onClick={handleClick}
           ></img>
         </div>
       </header>

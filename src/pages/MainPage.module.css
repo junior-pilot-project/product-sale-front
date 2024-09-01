@@ -1,0 +1,58 @@
+.mainPage {
+  align-items: center;
+  height: 120px;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.banner {
+  position: relative;
+  height: 450px;
+  background: #fafafa;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  color: black;
+  font-size: 24px;
+}
+
+.textRecommend {
+  color: #5b89ff;
+}
+
+.textRed {
+  color: #fe2021;
+}
+
+.borderline {
+  border: 1px solid black;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap; /* 여러 줄로 배치 가능 */
+  max-width: 1200px; /* 컨테이너의 최대 너비 설정 */
+  gap: 20px; /* 박스 사이의 간격 설정 */
+  justify-content: center;
+}
+
+.box {
+  height: 200px;
+  background-color: #c7c7c7;
+  width: 200px;
+  display: flex;
+}
+
+.boxContainer {
+  text-align: center; /* 박스와 텍스트를 가운데 정렬 */
+}
+
+.boxDescription {
+  margin-top: 10px; /* 박스와 설명 사이의 여백 설정 */
+  font-size: 16px; /* 설명 글씨 크기 설정 */
+  color: #333; /* 설명 글씨 색상 설정 */
+}
