@@ -13,7 +13,7 @@ const PageList = () => {
           <Link to="/register">회원가입 (완료)</Link>
         </li>
         <li>
-          <Link to="/">메인 (진행중)</Link>
+          <Link to="/">메인 (완료)</Link>
         </li>
         <li>
           <Link to="">상세보기 (미완료)</Link>
@@ -28,7 +28,7 @@ const PageList = () => {
           <Link to="">마이페이지 (미완료)</Link>
         </li>
         <li>
-          <Link to="/myPage">마이페이지 - 개인정보확인/수정 (미완료)</Link>
+          <Link to="/myPage">마이페이지 - 개인정보확인/수정 (진행중)</Link>
         </li>
         <li>
           <Link to="">마이페이지 - 배송지관리 (미완료)</Link>
