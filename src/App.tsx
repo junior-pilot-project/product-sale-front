@@ -1,5 +1,6 @@
 import LoginPage from 'pages/auth/LoginPage';
 import RegisterPage from 'pages/auth/RegisterPage';
+import DetailPage from 'pages/DetailPage';
 import MainPage from 'pages/MainPage';
 import MyPage from 'pages/MyPage';
 import PageList from 'pages/PageList';
@@ -16,6 +17,7 @@ class App extends Component {
           <Route path="/loginPage" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/myPage" element={<MyPage />} />
+          <Route path="/detail" element={<DetailPage />} />
         </Routes>
       </div>
     );

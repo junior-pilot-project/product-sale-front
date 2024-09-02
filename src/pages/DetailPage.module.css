@@ -1,0 +1,81 @@
+.detailWrapper {
+  width: 800px;
+  margin: 0 400px;
+}
+
+.detailContent {
+  display: flex;
+  margin: 100px 20px;
+}
+
+.productName {
+  padding-bottom: 20px;
+  color: black;
+}
+
+.price {
+  color: red;
+  font-size: 20px;
+}
+
+.inputPrice {
+  width: 142px;
+  height: 30px;
+  margin: 30px auto;
+}
+
+.whiteButton {
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+}
+
+.menubar {
+  display: flex;
+}
+
+.detailReview {
+  margin-top: 50px;
+}
+
+label {
+  font-size: 20px;
+  color: black;
+}
+
+.reviewList {
+  margin: 20px auto;
+}
+
+.reviewPeople {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reviewStar {
+  display: flex;
+  align-items: center;
+}
+
+.reviewContent {
+  color: black;
+  margin: 20px auto;
+}
+
+.date {
+  margin: 20px auto;
+  color: black;
+}
+
+.imageArea {
+  display: flex;
+  gap: 20px;
+  white-space: nowrap;
+  overflow: scroll;
+}
+
+.buttonArea {
+  display: flex;
+  gap: 20px;
+}

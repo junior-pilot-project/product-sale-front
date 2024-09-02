@@ -16,7 +16,7 @@ const PageList = () => {
           <Link to="/">메인 (완료)</Link>
         </li>
         <li>
-          <Link to="">상세보기 (미완료)</Link>
+          <Link to="/detail">상세보기 (미완료)</Link>
         </li>
         <li>
           <Link to="">결제하기 (미완료)</Link>

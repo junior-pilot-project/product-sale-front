@@ -16,6 +16,7 @@ const StyledButton = styled.button`
   color: white;
   width: 466px;
   margin-top: 10px;
+  display: inline-block;
 `;
 
 const Button = (props: ButtonHTMLAttributes<HTMLButtonElement>) => (
