@@ -24,12 +24,16 @@ h2 {
   color: #5b89ff;
 }
 
-.textRed {
-  color: #fe2021;
+.productSection {
+  display: flex;
 }
 
-.borderline {
-  border: 1px solid black;
+.productSection label {
+  margin: 20px 20px;
+}
+
+.textRed {
+  color: #fe2021;
 }
 
 .container {

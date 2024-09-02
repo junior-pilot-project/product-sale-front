@@ -4,7 +4,7 @@ import styles from './Header.module.css';
 const Header = () => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleClickMapage = () => {
     navigate('/myPage');
   };
 
@@ -36,19 +36,27 @@ const Header = () => {
           <img
             src={require('../../assets/main_logo.png')}
             alt="로고"
-            width="92px"
-            height={'92px'}
+            onClick={() => {
+              navigate('/');
+            }}
           ></img>
           <div className={`${styles.searchBox}`}>
             {/* <label htmlFor="search">전체</label> */}
-            <input type="text" id="search" name="search"></input>
+            <input
+              type="text"
+              id="search"
+              name="search"
+              placeholder="찾고 싶은 상품을 검색해보세요!"
+            ></input>
           </div>
           <img
             src={require('../../assets/mypage.png')}
             alt="마이페이지"
             width="40px"
             height={'40px'}
-            onClick={handleClick}
+            onClick={() => {
+              navigate('/myPage');
+            }}
           ></img>
         </div>
       </header>
