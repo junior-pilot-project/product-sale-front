@@ -4,10 +4,6 @@ import styles from './Header.module.css';
 const Header = () => {
   const navigate = useNavigate();
 
-  const handleClickMapage = () => {
-    navigate('/myPage');
-  };
-
   return (
     <>
       <header>
