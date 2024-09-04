@@ -22,7 +22,7 @@ const PageList = () => {
           <Link to="">결제하기 (미완료)</Link>
         </li>
         <li>
-          <Link to="">쿠폰상세 및 다운로드 (미완료)</Link>
+          <Link to="">쿠폰상세 및 다운로드 (완료)</Link>
         </li>
         <li>
           <Link to="">마이페이지 (미완료)</Link>

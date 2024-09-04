@@ -1,0 +1,110 @@
+/* 팝업 스타일 */
+.modalbg {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+.modalbgShow {
+  display: show;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+.modalwrap {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 500px;
+  background: #fff;
+  z-index: 1000;
+}
+
+.modalwrapShow {
+  display: show;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 500px;
+  background: #fff;
+  z-index: 1000;
+}
+
+.modalwrap,
+.modalwrapShow > img {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: right;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.couponList {
+  height: 404px;
+  margin: 20px 52px;
+  overflow: scroll;
+}
+
+.modalContent {
+  padding: 35px;
+}
+
+.modalCouponCt {
+  font-size: 15px;
+  color: black;
+}
+
+.coupon {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4f4f4;
+  height: 170px;
+  padding: 25px;
+  margin-top: 17px;
+}
+
+.coupon img {
+  position: absolute;
+  right: 0;
+}
+
+.couponName {
+  color: black;
+}
+
+.couponPercent {
+  font-size: 52px;
+  color: #ff0000;
+}
+
+.couponExpireDate {
+  color: black;
+}

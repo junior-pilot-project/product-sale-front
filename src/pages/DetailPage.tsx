@@ -1,8 +1,16 @@
 import Header from 'components/layout/Header';
 import styles from './DetailPage.module.css';
 import Button from 'components/common/Button';
+import Modal from 'components/common/Modal';
+import { useState } from 'react';
 
 const DetailPage = () => {
+  const [onModal, setOnModal] = useState(false);
+
+  const onCloseModal = () => {
+    setOnModal(false);
+  };
+
   return (
     <>
       <Header></Header>
@@ -28,6 +36,7 @@ const DetailPage = () => {
                   backgroundColor: '#D9D9D9',
                   color: 'black',
                 }}
+                onClick={() => setOnModal(true)}
               >
                 쿠폰 다운로드
               </Button>
@@ -127,6 +136,7 @@ const DetailPage = () => {
           </div>
         </div>
       </div>
+      <Modal open={onModal} close={onCloseModal}></Modal>
     </>
   );
 };
