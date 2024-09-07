@@ -25,7 +25,7 @@ const PageList = () => {
           <Link to="">쿠폰상세 및 다운로드 (완료)</Link>
         </li>
         <li>
-          <Link to="">마이페이지 (미완료)</Link>
+          <Link to="/myPage">마이페이지 - 주문목록 (완료,수정필요)</Link>
         </li>
         <li>
           <Link to="/myPage">마이페이지 - 개인정보확인/수정 (진행중)</Link>

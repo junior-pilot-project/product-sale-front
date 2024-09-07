@@ -17,7 +17,7 @@ const Header = () => {
                 <Link to="/register">회원가입</Link>
               </li>
               <li>
-                <Link to="#">고객센터</Link>
+                <Link to="/myPage">마이페이지</Link>
               </li>
             </ul>
           </nav>
