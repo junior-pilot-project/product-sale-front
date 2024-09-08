@@ -1,6 +1,7 @@
 import Header from 'components/layout/Header';
 import styles from './MyPage.module.css';
 import Button from 'components/common/Button';
+import { Link } from 'react-router-dom';
 
 const MyPage = () => {
   return (
@@ -12,10 +13,19 @@ const MyPage = () => {
         <div className={`${styles.content}`}>
           <div className={`${styles.borderBox}`}>
             <ul className={`${styles.menuList}`}>
-              <li className={`${styles.textBlue}`}>주문목록</li>
-              <li>개인정보확인/수정</li>
-              <li>배송지 관리</li>
-              <li>리뷰 관리</li>
+              <li className={`${styles.textBlue}`}>
+                <Link to={'/myPage'}>주문목록</Link>
+              </li>
+              <li>
+                <Link to={'/myPageMod'}>개인정보확인/수정</Link>
+              </li>
+              <li>
+                <Link to={'/'}>배송지 관리</Link>
+              </li>
+
+              <li>
+                <Link to={'/'}>리뷰 관리</Link>
+              </li>
             </ul>
           </div>
           <div className={`${styles.contentRight}`}>
@@ -74,8 +84,9 @@ const MyPage = () => {
                 </tr>
                 <tr>
                   <td>할인쿠폰</td>
-                  <td>10% 할인쿠폰적용 </td>
-                  <td>-4,000원 </td>
+                  <td>
+                    10% 할인쿠폰적용 <span>-4,000원 </span>
+                  </td>
                 </tr>
                 <tr>
                   <td>포인트</td>
