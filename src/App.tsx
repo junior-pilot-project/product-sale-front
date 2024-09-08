@@ -3,6 +3,7 @@ import RegisterPage from 'pages/auth/RegisterPage';
 import DetailPage from 'pages/DetailPage';
 import MainPage from 'pages/MainPage';
 import MyPage from 'pages/MyPage';
+import MyPageMod from 'pages/MyPageMod';
 import PageList from 'pages/PageList';
 import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/myPage" element={<MyPage />} />
           <Route path="/detail" element={<DetailPage />} />
+          <Route path="/myPageMod" element={<MyPageMod />} />
         </Routes>
       </div>
     );

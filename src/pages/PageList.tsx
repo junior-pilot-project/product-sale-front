@@ -28,7 +28,7 @@ const PageList = () => {
           <Link to="/myPage">마이페이지 - 주문목록 (완료,수정필요)</Link>
         </li>
         <li>
-          <Link to="/myPage">마이페이지 - 개인정보확인/수정 (진행중)</Link>
+          <Link to="/myPageMod">마이페이지 - 개인정보확인/수정 (완료)</Link>
         </li>
         <li>
           <Link to="">마이페이지 - 배송지관리 (미완료)</Link>
