@@ -20,9 +20,8 @@ const MyPage = () => {
                 <Link to={'/myPageMod'}>개인정보확인/수정</Link>
               </li>
               <li>
-                <Link to={'/'}>배송지 관리</Link>
+                <Link to={'/myPageLocation'}>배송지 관리</Link>
               </li>
-
               <li>
                 <Link to={'/'}>리뷰 관리</Link>
               </li>
