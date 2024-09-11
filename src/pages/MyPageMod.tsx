@@ -1,6 +1,5 @@
 import Header from 'components/layout/Header';
 import styles from './MyPageMod.module.css';
-import { Link } from 'react-router-dom';
 import LeftTab from 'components/myPage/LeftTab';
 
 const MyPageMod = () => {

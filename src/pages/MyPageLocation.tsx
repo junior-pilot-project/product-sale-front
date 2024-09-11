@@ -1,5 +1,4 @@
 import Header from 'components/layout/Header';
-import { Link } from 'react-router-dom';
 import styles from './MyPageLocation.module.css';
 import Button from 'components/common/Button';
 import LeftTab from 'components/myPage/LeftTab';

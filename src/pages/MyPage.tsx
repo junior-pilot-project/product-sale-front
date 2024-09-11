@@ -1,7 +1,6 @@
 import Header from 'components/layout/Header';
 import styles from './MyPage.module.css';
 import Button from 'components/common/Button';
-import { Link } from 'react-router-dom';
 import LeftTab from 'components/myPage/LeftTab';
 
 const MyPage = () => {
