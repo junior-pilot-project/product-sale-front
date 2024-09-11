@@ -1,0 +1,25 @@
+.borderBox {
+  background-color: #d9d9d9;
+  width: 235px;
+  height: 1286px;
+}
+
+.menuList {
+  list-style: none;
+  display: inline-block;
+  padding-left: 20px;
+}
+
+.menuList li a {
+  text-decoration: none;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+li a:visited {
+  color: black;
+}
+
+.textBlue {
+  color: #5b89ff;
+}

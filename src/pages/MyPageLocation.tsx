@@ -1,7 +1,7 @@
 import Header from 'components/layout/Header';
-import { Link } from 'react-router-dom';
 import styles from './MyPageLocation.module.css';
 import Button from 'components/common/Button';
+import LeftTab from 'components/myPage/LeftTab';
 
 const MyPageLocation = () => {
   return (
@@ -11,22 +11,7 @@ const MyPageLocation = () => {
         <div className={`${styles.label}`}>My쿠팡</div>
         <hr></hr>
         <div className={`${styles.content}`}>
-          <div className={`${styles.borderBox}`}>
-            <ul className={`${styles.menuList}`}>
-              <li className={`${styles.textBlue}`}>
-                <Link to={'/myPage'}>주문목록</Link>
-              </li>
-              <li>
-                <Link to={'/myPageMod'}>개인정보확인/수정</Link>
-              </li>
-              <li>
-                <Link to={'/myPageLocation'}>배송지 관리</Link>
-              </li>
-              <li>
-                <Link to={'/'}>리뷰 관리</Link>
-              </li>
-            </ul>
-          </div>
+          <LeftTab></LeftTab>
           <div className={`${styles.contentRight}`}>
             <section className={`${styles.section1}`}>
               <div className={`${styles.textBlue}`}>배송지 관리</div>

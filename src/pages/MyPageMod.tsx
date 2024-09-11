@@ -1,6 +1,6 @@
 import Header from 'components/layout/Header';
 import styles from './MyPageMod.module.css';
-import { Link } from 'react-router-dom';
+import LeftTab from 'components/myPage/LeftTab';
 
 const MyPageMod = () => {
   return (
@@ -9,24 +9,8 @@ const MyPageMod = () => {
       <div className={`${styles.myPage}`}>
         <div className={`${styles.label}`}>My쿠팡</div>
         <hr></hr>
-        <div className={`${styles.content}`}>
-          <div className={`${styles.borderBox}`}>
-            <ul className={`${styles.menuList}`}>
-              <li>
-                <Link to={'/myPage'}>주문목록</Link>
-              </li>
-              <li className={`${styles.textBlue}`}>
-                <Link to={'/myPageMod'}>개인정보확인/수정</Link>
-              </li>
-              <li>
-                <Link to={'/myPageLocation'}>배송지 관리</Link>
-              </li>
-
-              <li>
-                <Link to={'/'}>리뷰 관리</Link>
-              </li>
-            </ul>
-          </div>
+        <div className={`${styles.myPageContainer}`}>
+          <LeftTab></LeftTab>
           <div className={`${styles.contentRight}`}>
             <section className={` ${styles.section1}`}>
               <div className={`${styles.label}`}>개인정보확인/수정</div>
