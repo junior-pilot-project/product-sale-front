@@ -34,7 +34,10 @@ const PageList = () => {
           <Link to="/myPageLocation">마이페이지 - 배송지관리 (완료)</Link>
         </li>
         <li>
-          <Link to="">마이페이지 - 리뷰관리 (미완료)</Link>
+          <Link to="">마이페이지 - 리뷰관리 (완료)</Link>
+        </li>
+        <li>
+          <Link to="">마이페이지 - 비밀번호변경 (미완료)</Link>
         </li>
       </ul>
     </>
