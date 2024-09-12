@@ -6,6 +6,7 @@ import MyPage from 'pages/MyPage';
 import MyPageLocation from 'pages/MyPageLocation';
 import MyPageMod from 'pages/MyPageMod';
 import PageList from 'pages/PageList';
+import ReviewPage from 'pages/ReviewPage';
 import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ class App extends Component {
           <Route path="/detail" element={<DetailPage />} />
           <Route path="/myPageMod" element={<MyPageMod />} />
           <Route path="/myPageLocation" element={<MyPageLocation />} />
+          <Route path="/review" element={<ReviewPage />} />
         </Routes>
       </div>
     );

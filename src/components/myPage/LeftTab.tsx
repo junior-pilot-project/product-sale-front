@@ -15,9 +15,11 @@ const LeftTab = () => {
         <li>
           <Link to={'/myPageLocation'}>배송지 관리</Link>
         </li>
-
         <li>
-          <Link to={'/'}>리뷰 관리</Link>
+          <Link to={'/review'}>리뷰 관리</Link>
+        </li>
+        <li>
+          <Link to={'/'}>비밀번호변경</Link>
         </li>
       </ul>
     </div>
