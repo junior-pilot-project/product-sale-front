@@ -3,7 +3,8 @@ import Button from 'components/common/Button';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import styles from './Auth.module.css';
-import { AuthType, LoginType, textMap } from 'types/ConstType';
+import { AuthType, LoginType } from 'types/ConstType';
+import { setCookie, setInterceptor } from 'module/cookie';
 
 /**
  * 회원가입 또는 로그인 폼
@@ -11,14 +12,11 @@ import { AuthType, LoginType, textMap } from 'types/ConstType';
  */
 
 const AuthForm = ({ type }: AuthType) => {
-  const text = textMap[type];
   const navigate = useNavigate();
-
   const [answer, setAnswer] = useState<LoginType>({
     id: '',
     password: '',
   });
-  const [status, setStatus] = useState('typing');
 
   const handleLoginInput = (e: any) => {
     const { name, value } = e.target;
@@ -28,11 +26,24 @@ const AuthForm = ({ type }: AuthType) => {
     });
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
-    const resp = await (await axios.post(`/login`, answer)).data;
-    setStatus(resp.accessToken);
-    console.log(resp);
+    axios
+      .post(`/login`, answer)
+      .then((res) => {
+        const accessToken = res.data.accessToken;
+
+        localStorage.setItem('토큰', accessToken); // 재확인필요
+        setInterceptor(accessToken);
+        setCookie('accessToken', accessToken, { path: '/' });
+
+        navigate('/');
+      })
+      .catch((error) => {
+        if (error.response.data.status === 500) {
+          alert('아이디 또는 비밀번호가 틀렸습니다.');
+        }
+      });
   };
 
   return (
@@ -56,14 +67,10 @@ const AuthForm = ({ type }: AuthType) => {
           <input className={`${styles.styledInput}`} placeholder="이름"></input>
         )}
         <Button
-          disabled={
-            answer.id.length === 0 ||
-            answer.password.length === 0 ||
-            status === 'submitting'
-          }
+          disabled={answer.id.length === 0 || answer.password.length === 0}
           style={{ width: '428px', height: '50px' }}
         >
-          {text}
+          로그인
         </Button>
         {type === 'login' && (
           <Button
@@ -73,15 +80,6 @@ const AuthForm = ({ type }: AuthType) => {
             회원가입
           </Button>
         )}
-        <h4
-          style={{
-            color: '#000000',
-            overflow: 'hidden',
-            wordWrap: 'break-word',
-          }}
-        >
-          {status}
-        </h4>
       </form>
     </div>
   );
