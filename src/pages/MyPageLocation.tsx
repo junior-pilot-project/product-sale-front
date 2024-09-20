@@ -2,8 +2,16 @@ import Header from 'components/layout/Header';
 import styles from './MyPageLocation.module.css';
 import Button from 'components/common/Button';
 import LeftTab from 'components/myPage/LeftTab';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 const MyPageLocation = () => {
+  useEffect(() => {
+    axios.get(`/api/address`).then((res) => {
+      console.log(res.data);
+    });
+  });
+
   return (
     <div>
       <Header></Header>
