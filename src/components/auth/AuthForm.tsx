@@ -48,13 +48,16 @@ const AuthForm = ({ type }: AuthType) => {
 
   return (
     <div className={`${styles.authFormBlock}`}>
-      <h3>{type === 'register' ? '회원가입' : '로그인'}</h3>
+      <div className={`${styles.label}`}>
+        {type === 'register' ? '회원정보를 입력해주세요' : '로그인'}
+      </div>
       <form onSubmit={handleSubmit}>
         <input
           className={`${styles.styledInput}`}
           name="id"
           placeholder="아이디"
           onChange={handleLoginInput}
+          required
         ></input>
         <input
           className={`${styles.styledInput}`}
@@ -62,24 +65,35 @@ const AuthForm = ({ type }: AuthType) => {
           placeholder="비밀번호"
           type="password"
           onChange={handleLoginInput}
+          required
         ></input>
         {type === 'register' && (
-          <input className={`${styles.styledInput}`} placeholder="이름"></input>
+          <>
+            <input
+              className={`${styles.styledInput}`}
+              name="email"
+              placeholder="이메일"
+              type="email"
+              required
+            ></input>
+            <input
+              className={`${styles.styledInput}`}
+              placeholder="이름"
+              required
+            ></input>
+          </>
         )}
-        <Button
-          disabled={answer.id.length === 0 || answer.password.length === 0}
-          style={{ width: '428px', height: '50px' }}
-        >
-          로그인
-        </Button>
-        {type === 'login' && (
-          <Button
-            style={{ width: '428px', height: '50px' }}
-            onClick={() => navigate('/register')}
-          >
-            회원가입
-          </Button>
-        )}
+        <div className={`${styles.authButton}`}>
+          {type === 'register' ? (
+            <Button onClick={() => navigate('/register')}>회원가입</Button>
+          ) : (
+            <Button
+              disabled={answer.id.length === 0 || answer.password.length === 0}
+            >
+              로그인
+            </Button>
+          )}
+        </div>
       </form>
     </div>
   );
