@@ -7,6 +7,7 @@ import MyPage from 'pages/MyPage';
 import MyPageLocation from 'pages/MyPageLocation';
 import MyPageLocationList from 'pages/MyPageLocationList';
 import MyPageMod from 'pages/MyPageMod';
+import MyPagePassword from 'pages/MyPagePassword';
 import PageList from 'pages/PageList';
 import ReviewPage from 'pages/ReviewPage';
 import React, { useEffect } from 'react';
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/myPageLocation" element={<MyPageLocation />} />
         <Route path="/review" element={<ReviewPage />} />
         <Route path="/myPageLocationList" element={<MyPageLocationList />} />
+        <Route path="/myPagePassword" element={<MyPagePassword />} />
       </Routes>
     </div>
   );

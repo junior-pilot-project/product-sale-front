@@ -22,7 +22,7 @@ const LeftTab = () => {
           <Link to={'/review'}>리뷰 관리</Link>
         </li>
         <li>
-          <Link to={'/'}>비밀번호변경</Link>
+          <Link to={'/myPagePassword'}>비밀번호변경</Link>
         </li>
       </ul>
     </div>
