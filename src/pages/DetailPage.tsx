@@ -3,8 +3,10 @@ import styles from './DetailPage.module.css';
 import Button from 'components/common/Button';
 import Modal from 'components/common/Modal';
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 const DetailPage = () => {
+  const navigate = useNavigate();
   const [onModal, setOnModal] = useState(false);
 
   const onCloseModal = () => {
@@ -54,6 +56,7 @@ const DetailPage = () => {
                   width: '200px',
                   height: '50px',
                 }}
+                onClick={() => navigate('/questionPage')}
               >
                 문의하기
               </Button>
