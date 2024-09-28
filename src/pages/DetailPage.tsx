@@ -195,11 +195,109 @@ const DetailPage = () => {
                 <hr></hr>
               </div>
             </div>
-            <div id="section3" style={{ paddingTop: '70px' }}>
+            <div
+              id="section3"
+              className={`${styles.section3Box}`}
+              style={{ paddingTop: '70px' }}
+            >
               <label>상품문의</label>
-              <div>
-                상품문의상품문의상품문의상품문의상품문의상품문의상품문의상품문의상품문의상품문의상품문의상품문의
-                상품문의상품문의상품문의상품문의
+              <div className={`${styles.categoryBtn}`}>
+                <button className={`button ${styles.buttonCircle}`}>
+                  주문상품
+                </button>
+                <button
+                  className={`button ${styles.buttonCircle} ${styles.white}`}
+                >
+                  배송
+                </button>
+                <button
+                  className={`button ${styles.buttonCircle} ${styles.white}`}
+                >
+                  결제
+                </button>
+                <button
+                  className={`button ${styles.buttonCircle} ${styles.white}`}
+                >
+                  기타
+                </button>
+              </div>
+              <div className={`${styles.reviewListBox}`}>
+                <div className={`${styles.reviewLitag}`}>
+                  상품 색상 다른색상은 없나요?
+                  <img
+                    src={require('../assets/icon/arrow.png')}
+                    alt=""
+                    width={'30px'}
+                  />
+                </div>
+                <hr></hr>
+              </div>
+              <div className={`${styles.reviewListBox}`}>
+                <div className={`${styles.reviewLitag}`}>
+                  상품 색상 다른색상은 없나요?
+                  <img
+                    src={require('../assets/icon/arrow.png')}
+                    alt=""
+                    width={'30px'}
+                  />
+                </div>
+                <hr></hr>
+              </div>
+              <div className={`${styles.reviewListBox}`}>
+                <div className={`${styles.reviewLitag}`}>
+                  상품 색상 다른색상은 없나요?
+                  <img
+                    src={require('../assets/icon/arrow.png')}
+                    alt=""
+                    width={'30px'}
+                  />
+                </div>
+                <hr></hr>
+              </div>
+              <div className={`${styles.reviewListBox}`}>
+                <div className={`${styles.reviewLitag}`}>
+                  상품 색상 다른색상은 없나요?
+                  <img
+                    src={require('../assets/icon/arrow.png')}
+                    alt=""
+                    width={'30px'}
+                  />
+                </div>
+                <hr></hr>
+              </div>
+              <div className={`${styles.reviewListBox}`}>
+                <div className={`${styles.reviewLitag}`}>
+                  상품 색상 다른색상은 없나요?
+                  <img
+                    src={require('../assets/icon/arrow.png')}
+                    alt=""
+                    width={'30px'}
+                  />
+                </div>
+                <hr></hr>
+              </div>
+              <div className={`${styles.reviewListBox}`}>
+                <div className={`${styles.reviewLitag}`}>
+                  상품 색상 다른색상은 없나요?
+                  <img
+                    src={require('../assets/icon/arrow.png')}
+                    alt=""
+                    width={'30px'}
+                  />
+                </div>
+                <hr></hr>
+                <div className={`${styles.reviewListHiddenBox}`}>
+                  <div
+                    className={`${styles.hiddenBoxTop}`}
+                    style={{ whiteSpace: 'pre-wrap' }}
+                  >
+                    {`상품사이즈를 선택할수가 없네요\n그냥 프리사이즈로 제공하는건가요??`}
+                  </div>
+                  <div
+                    style={{ whiteSpace: 'pre-wrap' }}
+                    className={`${styles.hiddenBoxBottom}`}
+                  >{`안녕하세요 상품관리시스템입니다.\n다름아니라 상품은 프리사이즈로 제공되고있습니다.\n\n추후에 물품이 추가되면 사이즈별로 제공할 계획입니다\n\n다양한 색상과 수량이 필요하다면 연말쯤에 제품이 추가될거같습니다.\n감사합니다.`}</div>
+                </div>
               </div>
             </div>
           </div>
