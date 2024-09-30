@@ -1,3 +1,7 @@
+## 프로덕트 URL
+
+http://product-sale.xyz
+
 ## 프로젝트 구조
 
 - public, components, pages, types 으로 나눠져있습니다.
