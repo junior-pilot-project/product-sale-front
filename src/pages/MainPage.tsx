@@ -1,15 +1,8 @@
 import Header from 'components/layout/Header';
 import styles from './MainPage.module.css';
-import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 
 const MainPage = () => {
-  const navigate = useNavigate();
-
-  const goDetailPage = () => {
-    navigate('/detail');
-  };
-
   return (
     <>
       <Header></Header>
@@ -27,7 +20,7 @@ const MainPage = () => {
           <span className={`${styles.textRed}`}>여성패션</span>
           <ul className={`${styles.productList}`}>
             <li>
-              <Link to="" className={`${styles.productUnit}`}>
+              <Link to="/detail" className={`${styles.productUnit}`}>
                 <img
                   src={require('../assets/cloth1.png')}
                   width={'160px'}
@@ -42,7 +35,7 @@ const MainPage = () => {
               </Link>
             </li>
             <li>
-              <Link to="" className={`${styles.productUnit}`}>
+              <Link to="/detail" className={`${styles.productUnit}`}>
                 <img
                   src={require('../assets/cloth1.png')}
                   width={'160px'}
@@ -57,7 +50,7 @@ const MainPage = () => {
               </Link>
             </li>
             <li>
-              <Link to="" className={`${styles.productUnit}`}>
+              <Link to="/detail" className={`${styles.productUnit}`}>
                 <img
                   src={require('../assets/cloth1.png')}
                   width={'160px'}
@@ -77,7 +70,7 @@ const MainPage = () => {
           <span className={`${styles.textBlue}`}>남성패션</span>
           <ul className={`${styles.productList}`}>
             <li>
-              <Link to="" className={`${styles.productUnit}`}>
+              <Link to="/detail" className={`${styles.productUnit}`}>
                 <img
                   src={require('../assets/cloth1.png')}
                   width={'160px'}
@@ -92,7 +85,7 @@ const MainPage = () => {
               </Link>
             </li>
             <li>
-              <Link to="" className={`${styles.productUnit}`}>
+              <Link to="/detail" className={`${styles.productUnit}`}>
                 <img
                   src={require('../assets/cloth1.png')}
                   width={'160px'}
@@ -107,7 +100,7 @@ const MainPage = () => {
               </Link>
             </li>
             <li>
-              <Link to="" className={`${styles.productUnit}`}>
+              <Link to="/detail" className={`${styles.productUnit}`}>
                 <img
                   src={require('../assets/cloth1.png')}
                   width={'160px'}
