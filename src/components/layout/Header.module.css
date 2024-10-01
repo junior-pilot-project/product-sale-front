@@ -34,4 +34,16 @@ header a {
   margin-left: 10px;
   width: 518px;
   height: 46px;
+  position: relative;
+}
+
+.searchArea {
+  display: flex;
+  align-items: center;
+  left: 20;
+}
+
+.searchArea > img {
+  position: absolute;
+  right: 20px;
 }
