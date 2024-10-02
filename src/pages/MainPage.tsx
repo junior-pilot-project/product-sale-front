@@ -2,21 +2,12 @@ import Header from 'components/layout/Header';
 import styles from './MainPage.module.css';
 import { Link } from 'react-router-dom';
 
-// 검색기능
-const handleSearchBtn = (value: string) => {
-  console.log(value);
-};
-
 const MainPage = () => {
   return (
     <>
-      <Header handleClickSearch={handleSearchBtn}></Header>
+      <Header></Header>
       <div>
-        <img
-          src={require('../assets/banner.jpg')}
-          alt="오늘단하루 할인"
-          style={{ width: '100%' }}
-        />
+        <img src={require('../assets/banner.jpg')} alt="오늘단하루 할인" />
       </div>
       <div className={`${styles.mainContainer}`}>
         <h2 className={`${styles.categoryProductLabel}`}>

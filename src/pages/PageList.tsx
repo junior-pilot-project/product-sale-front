@@ -7,10 +7,10 @@ const PageList = () => {
       <h1 style={{ textAlign: 'center' }}>페이지 리스트</h1>
       <ul className="pageList">
         <li>
-          <Link to="/login">로그인 (완료)</Link>
+          <Link to="/loginPage">로그인 (완료)</Link>
         </li>
         <li>
-          <Link to="/signup">회원가입 (완료)</Link>
+          <Link to="/register">회원가입 (완료)</Link>
         </li>
         <li>
           <Link to="/">메인 (완료)</Link>

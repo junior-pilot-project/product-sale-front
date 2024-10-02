@@ -73,3 +73,7 @@ a:hover,
 a:active {
   text-decoration: none;
 }
+
+img {
+  width: 100%;
+}
