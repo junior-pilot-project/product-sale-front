@@ -1,10 +1,12 @@
-import { Link } from 'react-router-dom';
 import styles from './Auth.module.css';
-/**
- * 회원가입/로그인 페이지의 레이아웃
- */
+import { Link, useLocation } from 'react-router-dom';
+import AuthForm from './AuthForm';
 
-const AuthTemplate = ({ children }: any) => {
+const AuthPage = () => {
+  const location = useLocation();
+  const currentUrl = location.pathname;
+  const type = currentUrl === '/login' ? 'login' : 'register';
+
   return (
     <>
       <div className={`${styles.authTemplateBlock}`}>
@@ -14,7 +16,9 @@ const AuthTemplate = ({ children }: any) => {
               <img src={require('../../assets/main_logo.png')} alt="" />
             </Link>
           </div>
-          <div> {children}</div>
+          <div>
+            <AuthForm type={type}></AuthForm>
+          </div>
         </div>
       </div>
       <div className="borderLine"></div>
@@ -22,4 +26,4 @@ const AuthTemplate = ({ children }: any) => {
   );
 };
 
-export default AuthTemplate;
+export default AuthPage;

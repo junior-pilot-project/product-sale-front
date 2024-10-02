@@ -1,6 +1,5 @@
 import { setInterceptor } from 'module/cookie';
-import LoginPage from 'pages/auth/LoginPage';
-import RegisterPage from 'pages/auth/RegisterPage';
+import AuthPage from 'pages/auth/AuthPage';
 import DetailPage from 'pages/DetailPage';
 import MainPage from 'pages/MainPage';
 import MainPageSearch from 'pages/MainPageSearch';
@@ -29,8 +28,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/pageList" element={<PageList />} />
-        <Route path="/loginPage" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<AuthPage />} />
+        <Route path="/signup" element={<AuthPage />} />
         <Route path="/myPage" element={<MyPage />} />
         <Route path="/detail" element={<DetailPage />} />
         <Route path="/myPageMod" element={<MyPageMod />} />

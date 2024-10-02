@@ -16,10 +16,10 @@ const Header = ({ handleClickSearch }: any) => {
           <nav>
             <ul>
               <li>
-                <Link to="/loginPage">로그인</Link>
+                <Link to="/login">로그인</Link>
               </li>
               <li>
-                <Link to="/register">회원가입</Link>
+                <Link to="/signup">회원가입</Link>
               </li>
               <li>
                 <Link to="/myPage">마이페이지</Link>
