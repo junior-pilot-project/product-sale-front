@@ -3,7 +3,6 @@ import LoginPage from 'pages/auth/LoginPage';
 import RegisterPage from 'pages/auth/RegisterPage';
 import DetailPage from 'pages/DetailPage';
 import MainPage from 'pages/MainPage';
-import MainPageSearch from 'pages/MainPageSearch';
 import MyPage from 'pages/MyPage';
 import MyPageLocation from 'pages/MyPageLocation';
 import MyPageLocationList from 'pages/MyPageLocationList';
@@ -39,7 +38,6 @@ const App = () => {
         <Route path="/myPageLocationList" element={<MyPageLocationList />} />
         <Route path="/myPagePassword" element={<MyPagePassword />} />
         <Route path="/questionPage" element={<QuestionPage />} />
-        <Route path="/mainPageSearch" element={<MainPageSearch />} />
       </Routes>
     </div>
   );
