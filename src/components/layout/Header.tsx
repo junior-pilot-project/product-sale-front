@@ -1,7 +1,22 @@
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
+import { getCookie, removeCookie } from 'utils/cookie';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
+  const [cookie, setCookie] = useState('');
+
+  useEffect(() => {
+    setCookie(getCookie('accessToken'));
+  }, [cookie]);
+
+  const handlerRemoveCookie = () => {
+    removeCookie('accessToken');
+    removeCookie('refreshToken');
+
+    setCookie('');
+  };
+
   return (
     <>
       <header>
@@ -9,7 +24,13 @@ const Header = () => {
           <nav>
             <ul>
               <li>
-                <Link to="/loginPage">로그인</Link>
+                {!getCookie('accessToken') ? (
+                  <Link to="/loginPage">로그인</Link>
+                ) : (
+                  <Link to="" onClick={handlerRemoveCookie}>
+                    로그아웃
+                  </Link>
+                )}
               </li>
               <li>
                 <Link to="/register">회원가입</Link>

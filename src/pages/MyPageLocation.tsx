@@ -3,11 +3,11 @@ import styles from './MyPageLocation.module.css';
 import Button from 'components/common/Button';
 import LeftTab from 'components/myPage/LeftTab';
 import { useEffect } from 'react';
-import axios from 'axios';
+import axiosInstance from 'utils/apiConfig';
 
 const MyPageLocation = () => {
   useEffect(() => {
-    axios.get(`/api/address`).then((res) => {
+    axiosInstance.get(`/api/address`).then((res) => {
       console.log(res.data);
     });
   });
