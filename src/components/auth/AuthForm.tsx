@@ -1,10 +1,10 @@
-import axios from 'axios';
 import Button from 'components/common/Button';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import styles from './Auth.module.css';
 import { AuthType, LoginType } from 'types/ConstType';
-import { setCookie, setInterceptor } from 'module/cookie';
+import { setCookie } from 'utils/cookie';
+import axios from 'axios';
 
 /**
  * 회원가입 또는 로그인 폼
@@ -13,15 +13,16 @@ import { setCookie, setInterceptor } from 'module/cookie';
 
 const AuthForm = ({ type }: AuthType) => {
   const navigate = useNavigate();
-  const [answer, setAnswer] = useState<LoginType>({
+  const [loginForm, setLoginForm] = useState<LoginType>({
     id: '',
     password: '',
   });
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleLoginInput = (e: any) => {
     const { name, value } = e.target;
-    setAnswer({
-      ...answer,
+    setLoginForm({
+      ...loginForm,
       [name]: value,
     });
   };
@@ -29,19 +30,18 @@ const AuthForm = ({ type }: AuthType) => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     axios
-      .post(`/login`, answer)
+      .post(`/login`, loginForm)
       .then((res) => {
-        const accessToken = res.data.accessToken;
+        const { accessToken, refreshToken } = res.data;
 
-        localStorage.setItem('토큰', accessToken); // 재확인필요
-        setInterceptor(accessToken);
         setCookie('accessToken', accessToken, { path: '/' });
+        setCookie('refreshToken', refreshToken, { path: '/' });
 
         navigate('/');
       })
       .catch((error) => {
         if (error.response.data.status === 500) {
-          alert('아이디 또는 비밀번호가 틀렸습니다.');
+          setErrorMsg('아이디 또는 비밀번호가 틀렸습니다.');
         }
       });
   };
@@ -83,12 +83,15 @@ const AuthForm = ({ type }: AuthType) => {
             ></input>
           </>
         )}
+        <div className={`${styles.errorMsg}`}>{errorMsg}</div>
         <div className={`${styles.authButton}`}>
           {type === 'register' ? (
             <Button onClick={() => navigate('/register')}>회원가입</Button>
           ) : (
             <Button
-              disabled={answer.id.length === 0 || answer.password.length === 0}
+              disabled={
+                loginForm.id.length === 0 || loginForm.password.length === 0
+              }
             >
               로그인
             </Button>

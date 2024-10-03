@@ -1,4 +1,4 @@
-import { setInterceptor } from 'module/cookie';
+import { setInterceptor } from 'utils/cookie';
 import LoginPage from 'pages/auth/LoginPage';
 import RegisterPage from 'pages/auth/RegisterPage';
 import DetailPage from 'pages/DetailPage';
@@ -15,14 +15,6 @@ import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
-  useEffect(() => {
-    const fristToken = localStorage.getItem('토큰');
-    console.log('fristToken: ', fristToken);
-    if (fristToken) {
-      setInterceptor(fristToken);
-    }
-  }, []);
-
   return (
     <div>
       <Routes>
