@@ -1,6 +1,5 @@
 import Header from 'components/layout/Header';
 import styles from './MyPageLocation.module.css';
-import Button from 'components/common/Button';
 import LeftTab from 'components/myPage/LeftTab';
 import { useState } from 'react';
 import axiosInstance from 'utils/apiConfig';
