@@ -91,6 +91,26 @@ li a:visited {
   width: 20px;
 }
 
-.buttonArea {
-  text-align: center;
+.bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 173px 0;
+  gap: 32px;
+}
+
+.buttonFillWhite {
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  color: #5b89ff;
+  border-color: #5b89ff;
+}
+
+.buttonFillBlue {
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  background-color: #5b89ff;
+  color: #fff;
 }

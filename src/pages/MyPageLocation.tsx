@@ -2,15 +2,27 @@ import Header from 'components/layout/Header';
 import styles from './MyPageLocation.module.css';
 import Button from 'components/common/Button';
 import LeftTab from 'components/myPage/LeftTab';
-import { useEffect } from 'react';
+import { useState } from 'react';
 import axiosInstance from 'utils/apiConfig';
+import { InputBoxType } from 'types/ConstType';
+import { useNavigate } from 'react-router';
 
 const MyPageLocation = () => {
-  useEffect(() => {
-    axiosInstance.get(`/api/address`).then((res) => {
-      console.log(res.data);
+  const [addressName, setAddressName] = useState('');
+  const navigate = useNavigate();
+
+  const onChangeEvent = (e: any) => {
+    const addressName = e.target.value;
+    setAddressName(addressName);
+  };
+
+  const onSaveAddress = () => {
+    if (addressName === '') return;
+    const param = { addressName: addressName };
+    axiosInstance.post('/api/address', param).then((res) => {
+      navigate('/myPageLocationList');
     });
-  });
+  };
 
   return (
     <div>
@@ -24,40 +36,49 @@ const MyPageLocation = () => {
             <section className={`${styles.section1}`}>
               <div className={`${styles.textBlue}`}>배송지 관리</div>
               <div className={`${styles.container}`}>
-                <div className={`${styles.inputBoxArea}`}>
-                  <div className={`${styles.inputBoxIcon}`}>
-                    <img src={require('../assets/icon/icon_mail.png')} alt="" />
-                  </div>
-                  <input placeholder="홍길동"></input>
-                </div>
-                <div className={`${styles.inputBoxArea}`}>
-                  <div className={`${styles.inputBoxIcon}`}>
-                    <img src={require('../assets/icon/icon_mail.png')} alt="" />
-                  </div>
-                  <input placeholder="경기도 부천시 금천로 334"></input>
-                </div>
-                <div className={`${styles.inputBoxArea}`}>
-                  <div className={`${styles.inputBoxIcon}`}>
-                    <img src={require('../assets/icon/icon_mail.png')} alt="" />
-                  </div>
-                  <input placeholder="직접 받고 부재시 문앞"></input>
-                </div>
+                <InputBoxArea
+                  placeholder="경기도 부천시 금천로 334"
+                  imgsrc={require('../assets/icon/icon_mail.png')}
+                  onChangeValue={onChangeEvent}
+                ></InputBoxArea>
                 <div className={`${styles.defaultDelival}`}>
                   <input type="checkbox"></input>
                   <div className={`${styles.checkboxText}`}>
                     기본배송지로 선택
                   </div>
                 </div>
-                <div className={`${styles.buttonArea}`}>
-                  <Button style={{ width: '245px', height: '50px' }}>
+                <div className={`${styles.bottom} `}>
+                  <button
+                    className={`button ${styles.buttonFillWhite} `}
+                    onClick={() => navigate('/myPageLocationList')}
+                  >
+                    취소하기
+                  </button>
+                  <button
+                    className={`button ${styles.buttonFillBlue} `}
+                    onClick={onSaveAddress}
+                  >
                     저장
-                  </Button>
+                  </button>
                 </div>
               </div>
             </section>
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+const InputBoxArea = (props: InputBoxType) => {
+  const { placeholder, imgsrc, onChangeValue } = props;
+
+  return (
+    <div className={`${styles.inputBoxArea}`}>
+      <div className={`${styles.inputBoxIcon}`}>
+        <img src={imgsrc} alt="" style={{ width: '20px' }} />
+      </div>
+      <input placeholder={placeholder} onChange={onChangeValue}></input>
     </div>
   );
 };
