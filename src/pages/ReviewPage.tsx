@@ -9,9 +9,9 @@ const ReviewPage = () => {
       <div className={`${styles.myPage}`}>
         <div className={`${styles.label}`}>My쿠팡</div>
         <hr></hr>
-        <div className={`${styles.content}`}>
+        <div className={`${styles.myPageContainer}`}>
           <LeftTab></LeftTab>
-          <div className={`${styles.rightContainer}`}>
+          <div className={`${styles.contentRight}`}>
             <section className={`${styles.section}`}>
               <div className={`${styles.label}`}>리뷰 관리</div>
               <div className={`${styles.sectionInfo}`}>
