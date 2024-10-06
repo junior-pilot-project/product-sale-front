@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/proxy/*"
-  to = "https://api.product-sale.xyz"
+  to = "https://api.product-sale.xyz/:splat"
   status = 200
   force = true
 
