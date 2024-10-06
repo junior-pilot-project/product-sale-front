@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "/proxy/*"
+  to = "https://api.product-sale.xyz"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

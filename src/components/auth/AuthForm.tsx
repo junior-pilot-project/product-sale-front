@@ -29,8 +29,11 @@ const AuthForm = ({ type }: AuthType) => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+
+    const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+
     axios
-      .post(`/login`, loginForm)
+      .post(`${PROXY}/login`, loginForm)
       .then((res) => {
         const { accessToken, refreshToken } = res.data;
 
