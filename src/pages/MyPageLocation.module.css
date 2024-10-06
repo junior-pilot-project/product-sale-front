@@ -3,26 +3,19 @@ hr {
 }
 
 .myPage {
-  margin: 20px 20px;
+  align-items: center;
+  margin: 83px 150px;
 }
 
 .label {
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 27px;
-}
-
-.myPageContainer {
-  display: flex;
 }
 
 .menuList {
   list-style: none;
   display: inline-block;
   padding-left: 20px;
-}
-
-.contentRight {
-  margin: 44px 54px;
 }
 
 .menuList li a {
@@ -47,6 +40,17 @@ li a:visited {
   background-color: #d9d9d9;
   width: 235px;
   height: 1286px;
+}
+
+.contentRight {
+  display: flex;
+  justify-content: center;
+  margin: 44px 54px;
+  width: 80%;
+}
+
+.container {
+  height: 373px;
 }
 
 /* input 영역 */

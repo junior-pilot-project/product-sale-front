@@ -1,9 +1,10 @@
 .myPage {
-  margin: 20px 20px;
+  align-items: center;
+  margin: 83px 150px;
 }
 
 .label {
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 27px;
 }
 

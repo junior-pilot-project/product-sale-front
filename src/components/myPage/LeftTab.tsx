@@ -10,9 +10,7 @@ const LeftTab = () => {
           <Link to={'/myPage'}>주문목록</Link>
         </li>
         <li className={`${styles.textBlue}`}>
-          <Link className={`${styles.menuText}`} to={'/myPageMod'}>
-            개인정보확인/수정
-          </Link>
+          <Link to={'/myPageMod'}>개인정보확인/수정</Link>
         </li>
         <li>
           <Link to={'/myPageLocation'}>배송지 관리</Link>

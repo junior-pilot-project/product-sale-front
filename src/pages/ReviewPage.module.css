@@ -1,16 +1,11 @@
 .myPage {
-  margin: 20px 20px;
+  align-items: center;
+  margin: 83px 150px;
 }
-
 .label {
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 27px;
 }
-
-.myPageContainer {
-  display: flex;
-}
-
 .menuList {
   list-style: none;
   display: inline-block;
@@ -21,11 +16,17 @@
   display: flex;
 }
 
-.contentRight {
-  margin: 44px 54px;
+.rightContainer {
+  width: 80%;
+}
+
+.section {
+  width: 100%;
+  padding: 27px 0 0 53px;
 }
 
 .label {
+  color: #5b89ff;
   font-size: 20px;
 }
 
