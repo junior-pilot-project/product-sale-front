@@ -1,20 +1,18 @@
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import { getCookie, removeCookie } from 'utils/cookie';
-import { useEffect, useState } from 'react';
+import axiosInstance, { PROXY } from 'utils/apiConfig';
 
 const Header = () => {
-  const [cookie, setCookie] = useState('');
-
-  useEffect(() => {
-    setCookie(getCookie('accessToken'));
-  }, [cookie]);
-
-  const handlerRemoveCookie = () => {
-    removeCookie('accessToken');
-    removeCookie('refreshToken');
-
-    setCookie('');
+  const handleLogout = () => {
+    axiosInstance
+      .post(`${PROXY}/api/user/logout`)
+      .then((res) => {
+        removeCookie('accessToken');
+      })
+      .catch((e) => {
+        console.error(e);
+      });
   };
 
   return (
@@ -27,7 +25,7 @@ const Header = () => {
                 {!getCookie('accessToken') ? (
                   <Link to="/loginPage">로그인</Link>
                 ) : (
-                  <Link to="" onClick={handlerRemoveCookie}>
+                  <Link to="" onClick={handleLogout}>
                     로그아웃
                   </Link>
                 )}
