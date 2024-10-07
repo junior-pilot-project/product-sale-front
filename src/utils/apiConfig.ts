@@ -1,6 +1,8 @@
 import axios, { AxiosInstance } from 'axios';
 import { getCookie, setCookie } from './cookie';
 
+export const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+
 const axiosInstance = axios.create({
   timeout: 5000, //5초설정
   headers: {
