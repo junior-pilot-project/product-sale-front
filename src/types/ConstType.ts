@@ -14,13 +14,6 @@ export type LoginType = {
   password: string;
 };
 
-export type RegisterType = {
-  userId: string;
-  userName: string;
-  userPassword: string;
-  userEmail: string;
-};
-
 export type InputBoxType = {
   placeholder: string;
   imgsrc: string;
