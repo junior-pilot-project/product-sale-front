@@ -97,6 +97,9 @@ const AuthForm = ({ type }: AuthType) => {
         navigate('/');
       })
       .catch((e) => {
+        if (e.response.data.status === 500) {
+          alert(e.response.data.detail);
+        }
         console.error(e);
       });
   };
@@ -104,6 +107,7 @@ const AuthForm = ({ type }: AuthType) => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const buttonType = e.nativeEvent.submitter.name;
+    console.log(buttonType + '데이터');
     if (buttonType === 'signUp') {
       getRegister();
     } else if (buttonType === 'login') {
