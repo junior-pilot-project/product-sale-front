@@ -12,7 +12,7 @@ const MyPageMod = () => {
     newPassword: '',
   });
 
-  const onChangeValue = (e) => {
+  const onChangeValue = (e: any) => {
     setValue({
       ...value,
       [e.target.name]: e.target.value,
@@ -20,7 +20,6 @@ const MyPageMod = () => {
   };
 
   const checkPassword = () => {
-    console.log(value.userPassword);
     if (value.userPassword !== value.newPassword) {
       alert('비밀번호가 일치하지않습니다.');
     }

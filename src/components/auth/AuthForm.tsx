@@ -93,7 +93,6 @@ const AuthForm = ({ type }: AuthType) => {
     axios
       .post(`${PROXY}/api/user/join`, registerForm)
       .then((res) => {
-        console.log(res);
         navigate('/');
       })
       .catch((e) => {
@@ -101,13 +100,13 @@ const AuthForm = ({ type }: AuthType) => {
           alert(e.response.data.detail);
         }
         console.error(e);
+        alert('Error데이터를 불러올 수 없습니다');
       });
   };
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const buttonType = e.nativeEvent.submitter.name;
-    console.log(buttonType + '데이터');
     if (buttonType === 'signUp') {
       getRegister();
     } else if (buttonType === 'login') {

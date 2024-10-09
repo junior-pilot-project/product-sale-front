@@ -1,14 +1,22 @@
 import Header from 'components/layout/Header';
 import styles from './MyPageLocation.module.css';
 import LeftTab from 'components/myPage/LeftTab';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axiosInstance from 'utils/apiConfig';
 import { InputBoxType } from 'types/ConstType';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 
 const MyPageLocation = () => {
   const [addressName, setAddressName] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state !== null) {
+      const { addressName } = location.state;
+      setAddressName(addressName);
+    }
+  }, [location.state]);
 
   const onChangeEvent = (e: any) => {
     const addressName = e.target.value;
@@ -38,6 +46,7 @@ const MyPageLocation = () => {
                 placeholder="경기도 부천시 금천로 334"
                 imgsrc={require('../assets/icon/icon_mail.png')}
                 onChangeValue={onChangeEvent}
+                value={addressName}
               ></InputBoxArea>
               <div className={`${styles.defaultDelival}`}>
                 <input type="checkbox"></input>
@@ -68,14 +77,18 @@ const MyPageLocation = () => {
 };
 
 const InputBoxArea = (props: InputBoxType) => {
-  const { placeholder, imgsrc, onChangeValue } = props;
+  const { placeholder, imgsrc, onChangeValue, value } = props;
 
   return (
     <div className={`${styles.inputBoxArea}`}>
       <div className={`${styles.inputBoxIcon}`}>
         <img src={imgsrc} alt="" style={{ width: '20px' }} />
       </div>
-      <input placeholder={placeholder} onChange={onChangeValue}></input>
+      <input
+        value={value}
+        placeholder={placeholder}
+        onChange={onChangeValue}
+      ></input>
     </div>
   );
 };

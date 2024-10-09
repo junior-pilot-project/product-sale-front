@@ -24,5 +24,6 @@ export type RegisterType = {
 export type InputBoxType = {
   placeholder: string;
   imgsrc: string;
+  value: string;
   onChangeValue: ChangeEventHandler<HTMLInputElement>;
 };
