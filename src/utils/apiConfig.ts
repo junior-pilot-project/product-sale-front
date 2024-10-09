@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from 'axios';
+import axios from 'axios';
 import { getCookie, setCookie } from './cookie';
 
 export const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
@@ -13,8 +13,6 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   (config) => {
     const accessToken = getCookie('accessToken');
-    console.log(accessToken + '확인');
-
     if (!accessToken) {
       window.location.href = '/loginPage';
       return config;
@@ -26,45 +24,45 @@ axiosInstance.interceptors.request.use(
     return config;
   },
   (error: any) => {
-    console.log(error);
+    console.error(error);
     return Promise.reject(error);
   },
 );
 
 axiosInstance.interceptors.response.use(
   (response) => {
+    if (response.data.code === 102) {
+      // 만료된토큰
+      tokenRefresh();
+    }
     return response;
   },
   async (error) => {
     if (error.response) {
       if (error.response.status === 401) {
         //TODO 테스트 할것
-        await tokenRefresh(axiosInstance);
+        await tokenRefresh();
         const accessToken = getCookie('accessToken');
         error.config.headers.Authorization = `Bearer ${accessToken}`;
         // 중단된 요청을(에러난 요청)을 토큰 갱신 후 재요청
         return axiosInstance(error.config);
       } else if (error.response.status === 404) {
-        window.location.href = '/notFound';
+        // window.location.href = '/notFound';
       } else if (error.response && error.response.status === 500) {
         const errorCode = error.response.data.errorCode;
-        console.log(errorCode);
+        console.error(errorCode);
       }
     }
   },
 );
 
-const tokenRefresh = async (axiosInstance: AxiosInstance) => {
+const tokenRefresh = async () => {
   const refreshToken = getCookie('refreshToken');
-  const { data } = await axiosInstance.post('/api/auth/renew/token', {
+  const { data } = await axios.post(`${PROXY}/api/auth/renew/token`, {
     refreshToken: refreshToken,
   });
-
   const newAccessToken = data.accessToken;
-  const newRefreshToken = data.refreshToken;
-
   setCookie('accessToken', newAccessToken, { path: '/' });
-  setCookie('refreshToken', newRefreshToken, { path: '/' });
 };
 
 export default axiosInstance;

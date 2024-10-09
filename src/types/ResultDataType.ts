@@ -12,3 +12,12 @@ export type ApprovalDetailProps = {
   comment: string;
   approvalOrder: string;
 };
+
+export type AddressListProps = {
+  addressId: number;
+  userId: string;
+  addressName: string;
+  defaultYn: string;
+  createdAt: string;
+  updatedAt: string;
+};
