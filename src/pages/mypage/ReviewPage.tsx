@@ -12,11 +12,11 @@ const ReviewPage = () => {
         <div className={`${styles.myPageContainer}`}>
           <LeftTab></LeftTab>
           <div className={`${styles.contentRight}`}>
-            <section className={`${styles.section}`}>
+            <section>
               <div className={`${styles.label}`}>리뷰 관리</div>
               <div className={`${styles.sectionInfo}`}>
                 <img
-                  src={require('../assets/cloth1.png')}
+                  src={require('../../assets/cloth1.png')}
                   alt=""
                   style={{ width: '115px', height: '115px' }}
                 />
@@ -26,7 +26,7 @@ const ReviewPage = () => {
                     티셔츠
                   </p>
                   <img
-                    src={require('../assets/review_star.png')}
+                    src={require('../../assets/review_star.png')}
                     alt=""
                     style={{ width: '267px', height: '60px' }}
                   />
@@ -34,7 +34,7 @@ const ReviewPage = () => {
               </div>
               <div className={`${styles.borderLine}`}></div>
             </section>
-            <section className={`${styles.section}`}>
+            <section>
               <div className={`${styles.label}`}>상세 리뷰</div>
               <textarea
                 placeholder="다른 고객님들에게 도움이 되도록 상세한 평가를 남겨주세요."
@@ -42,7 +42,7 @@ const ReviewPage = () => {
               ></textarea>
               <div className={`${styles.borderLine}`}></div>
             </section>
-            <section className={`${styles.section}`}>
+            <section>
               <div className={`${styles.label}`}>사진첨부</div>
               <div className={`${styles.pictureAttach}`}>
                 <button

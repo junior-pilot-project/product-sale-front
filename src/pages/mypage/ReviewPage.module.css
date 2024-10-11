@@ -4,7 +4,7 @@
 
 .label {
   font-size: 20px;
-  margin-bottom: 27px;
+  margin: 27px 0 27px;
 }
 
 .myPageContainer {
@@ -46,6 +46,7 @@
 .textarea {
   width: 600px;
   height: 244px;
+  padding: 24px;
   background-color: #eaeaea;
 }
 
@@ -58,6 +59,7 @@
   height: 62px;
   color: #5b89ff;
   border-color: #5b89ff;
+  border: none;
 }
 
 .pictureAttach {
@@ -81,7 +83,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 173px 0;
+  padding: 100px 0;
   gap: 32px;
 }
 
@@ -91,6 +93,7 @@
   font-size: 20px;
   color: #5b89ff;
   border-color: #5b89ff;
+  border: none;
 }
 
 .buttonFillBlue {
@@ -99,4 +102,5 @@
   font-size: 20px;
   background-color: #5b89ff;
   color: #fff;
+  border: none;
 }
