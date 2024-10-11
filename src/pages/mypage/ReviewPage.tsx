@@ -1,6 +1,7 @@
 import Header from 'components/layout/Header';
 import styles from './ReviewPage.module.css';
 import LeftTab from 'components/myPage/LeftTab';
+import Rating from 'components/myPage/Rating';
 
 const ReviewPage = () => {
   return (
@@ -25,11 +26,7 @@ const ReviewPage = () => {
                     어택존 방한 기모 발열 목 폴라 로카 군인 티 남자 목티 긴팔
                     티셔츠
                   </p>
-                  <img
-                    src={require('../../assets/review_star.png')}
-                    alt=""
-                    style={{ width: '267px', height: '60px' }}
-                  />
+                  <Rating />
                 </div>
               </div>
               <div className={`${styles.borderLine}`}></div>
