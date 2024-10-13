@@ -54,31 +54,6 @@
   margin: 30px 27px 0;
 }
 
-.reviewPageButton {
-  width: 372px;
-  height: 62px;
-  color: #5b89ff;
-  border-color: #5b89ff;
-  border: none;
-}
-
-.pictureAttach {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.count {
-  padding-left: 20px;
-}
-
-.paragraph {
-  display: flex;
-
-  justify-content: right;
-  padding: 54px 50px 0;
-}
-
 .bottom {
   display: flex;
   justify-content: center;
