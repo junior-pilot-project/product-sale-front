@@ -4,17 +4,25 @@ import LeftTab from 'components/myPage/LeftTab';
 import Rating from 'components/myPage/Rating';
 import { useState } from 'react';
 import FileInput from 'components/common/FileInput';
-import { imgUploadApi, reviewApi } from 'api';
+import { reviewApi } from 'api';
+import { useNavigate } from 'react-router';
 
 const INITIAL_DATA = {
-  productId: 0,
   reviewComment: '',
   reviewRating: '',
-  reviewImageUrl: '',
 };
+
+interface FileWithMeta {
+  file: File; // 실제 File 객체
+  imageId: string; // 추가적인 속성
+  imageUrl: string; // 추가적인 속성
+}
 
 const ReviewPage = () => {
   const [reviewboard, setReviewboard] = useState(INITIAL_DATA);
+  const [files, setFiles] = useState<FileWithMeta[]>([]);
+
+  const navigate = useNavigate();
 
   const handleChange = (name: string, value: string) => {
     setReviewboard((prevValues) => ({
@@ -23,22 +31,31 @@ const ReviewPage = () => {
     }));
   };
 
+  const handleFileChange = (file: any) => {
+    setFiles((prevFiles) => [...prevFiles, file]);
+  };
+
+  const handleClearFile = (fileToDelete: any) => {
+    setFiles((prevFiles) => prevFiles.filter((file) => file !== fileToDelete));
+  };
+
   const handleChangeInput = (e: any) => {
     const { name, value } = e.target;
     handleChange(name, value);
   };
 
-  const handleFileChange = (e: any) => {
-    const { name } = e.target;
-    const value = e.target.files[0];
-    const formData = new FormData();
-    formData.append(name, value);
-    formData.append('imageType', 'review');
-    imgUploadApi(formData);
-  };
+  const handleSaveClick = async () => {
+    const { imageId, imageUrl } = files[0];
+    const data = { productId: imageId, reviewImageUrl: imageUrl };
 
-  const handleSaveClick = () => {
-    reviewApi(reviewboard);
+    const params = { ...data, ...reviewboard };
+    try {
+      await reviewApi(params);
+      // 목록리스트
+      navigate('/reviewList');
+    } catch (error) {
+      console.error('등록 실패했습니다:', error);
+    }
   };
 
   return (
@@ -74,8 +91,13 @@ const ReviewPage = () => {
               name="reviewComment"
             ></textarea>
             <div className={`${styles.borderLine}`}></div>
-            <div className={`${styles.label}`}>사진첨부</div>
-            <FileInput name="image" onChange={handleFileChange} />
+            <FileInput
+              name="image"
+              onChangeFile={handleFileChange}
+              onClearFile={handleClearFile}
+              // onClearClick={handleClearClick}
+              files={files}
+            />
             <div className={`${styles.borderLine} `}></div>
             <div className={`${styles.bottom} `}>
               <button className={`${styles.button} ${styles.buttonFillWhite} `}>
