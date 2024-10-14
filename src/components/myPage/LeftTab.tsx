@@ -24,6 +24,9 @@ const LeftTab = () => {
           <Link to={'/review'}>리뷰 관리</Link>
         </li>
         <li>
+          <Link to={'/reviewList'}>리뷰 목록</Link>
+        </li>
+        <li>
           <Link to={'/myPagePassword'}>비밀번호변경</Link>
         </li>
       </ul>

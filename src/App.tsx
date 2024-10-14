@@ -11,6 +11,7 @@ import PageList from 'pages/PageList';
 import QuestionPage from 'pages/QuestionPage';
 import ReviewPage from 'pages/mypage/ReviewPage';
 import { Route, Routes } from 'react-router-dom';
+import ReviewPageList from 'pages/mypage/ReviewPageList';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/myPageMod" element={<MyPageMod />} />
         <Route path="/myPageLocation" element={<MyPageLocation />} />
         <Route path="/review" element={<ReviewPage />} />
+        <Route path="/reviewList" element={<ReviewPageList />} />
         <Route path="/myPageLocationList" element={<MyPageLocationList />} />
         <Route path="/myPagePassword" element={<MyPagePassword />} />
         <Route path="/questionPage" element={<QuestionPage />} />
