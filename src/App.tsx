@@ -2,14 +2,14 @@ import LoginPage from 'pages/auth/LoginPage';
 import RegisterPage from 'pages/auth/RegisterPage';
 import DetailPage from 'pages/DetailPage';
 import MainPage from 'pages/MainPage';
-import MyPage from 'pages/MyPage';
-import MyPageLocation from 'pages/MyPageLocation';
-import MyPageLocationList from 'pages/MyPageLocationList';
-import MyPageMod from 'pages/MyPageMod';
-import MyPagePassword from 'pages/MyPagePassword';
+import MyPage from 'pages/mypage/MyPage';
+import MyPageLocation from 'pages/mypage/MyPageLocation';
+import MyPageLocationList from 'pages/mypage/MyPageLocationList';
+import MyPageMod from 'pages/mypage/MyPageMod';
+import MyPagePassword from 'pages/mypage/MyPagePassword';
 import PageList from 'pages/PageList';
 import QuestionPage from 'pages/QuestionPage';
-import ReviewPage from 'pages/ReviewPage';
+import ReviewPage from 'pages/mypage/ReviewPage';
 import { Route, Routes } from 'react-router-dom';
 
 const App = () => {

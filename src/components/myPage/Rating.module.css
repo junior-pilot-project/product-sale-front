@@ -1,0 +1,16 @@
+.rating {
+  background-image: url('../../assets/icon/star_dark.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  width: 36px;
+  height: 35px;
+  border: none;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+.rating.selected {
+  background-image: url('../../assets/icon/star.svg');
+}

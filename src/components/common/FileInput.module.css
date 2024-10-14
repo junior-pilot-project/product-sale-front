@@ -1,0 +1,23 @@
+.pictureAttach {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.reviewPageButton {
+  width: 372px;
+  height: 62px;
+  color: #5b89ff;
+  border-color: #5b89ff;
+  border: none;
+}
+
+.count {
+  padding-left: 20px;
+}
+
+.paragraph {
+  display: flex;
+
+  justify-content: right;
+  padding: 54px 50px 0;
+}

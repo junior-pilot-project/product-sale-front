@@ -23,7 +23,7 @@ const MyPage = () => {
                 <div className={`${styles.orderBoxProduct}`}>
                   <div className={`${styles.label}`}>배송완료</div>
                   <img
-                    src={require('../assets/cloth1.png')}
+                    src={require('../../assets/cloth1.png')}
                     width={'146px'}
                     height={'146px'}
                     alt="버튼"

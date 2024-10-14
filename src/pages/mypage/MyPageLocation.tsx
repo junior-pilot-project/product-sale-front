@@ -44,7 +44,7 @@ const MyPageLocation = () => {
             <div className={`${styles.container}`}>
               <InputBoxArea
                 placeholder="경기도 부천시 금천로 334"
-                imgsrc={require('../assets/icon/icon_mail.png')}
+                imgsrc={require('../../assets/icon/icon_mail.png')}
                 onChangeValue={onChangeEvent}
                 value={addressName}
               ></InputBoxArea>
