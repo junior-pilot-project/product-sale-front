@@ -31,7 +31,24 @@ header a {
 }
 
 .searchBox {
+  display: flex;
+  align-items: center;
+  position: relative;
   margin-left: 10px;
   width: 518px;
   height: 46px;
+}
+
+.searchBtn {
+  position: absolute;
+  background-image: url('../../assets/icon/search-btn.svg');
+  background-size: cover;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.inputArea {
+  padding: 14px 28px;
 }
