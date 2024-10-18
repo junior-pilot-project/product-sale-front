@@ -52,11 +52,13 @@ const Header = () => {
             <img src={require('../../assets/main_logo.png')} alt="로고"></img>
           </Link>
           <div className={`${styles.searchBox}`}>
+            <div className={`${styles.searchBtn}`}></div>
             <input
               type="text"
               id="search"
               name="search"
               placeholder="찾고 싶은 상품을 검색해보세요!"
+              className={`${styles.inputArea}`}
             ></input>
           </div>
           <Link to={'/myPage'}>
