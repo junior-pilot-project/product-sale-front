@@ -1,6 +1,34 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
+import { ErrorResponse } from 'react-router';
 import axiosInstance, { PROXY } from 'utils/apiConfig';
 import { getCookie } from 'utils/cookie';
+
+// product-management-controller-상품조회
+
+// 상품조회
+export const productApi = async ({
+  take = 10,
+  skip = 0,
+  productPrice = '',
+  productName = '',
+  sortBy = '',
+}) => {
+  const params = { take, productPrice, productName, sortBy };
+
+  try {
+    const res = await axiosInstance.get(`${PROXY}/api/product`, { params });
+    return res.data;
+  } catch (error) {
+    const axiosError = error as AxiosError<ErrorResponse>;
+
+    if (axiosError.response && axiosError.response.data.status === 500) {
+      console.error('서버 에러발생:', axiosError.response.data);
+    } else {
+      console.error('에러발생:', error);
+    }
+    throw error;
+  }
+};
 
 // MY정보-리뷰관리
 

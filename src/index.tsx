@@ -11,11 +11,9 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 root.render(
-  <React.StrictMode>
-    <CookiesProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </CookiesProvider>
-  </React.StrictMode>,
+  <CookiesProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </CookiesProvider>,
 );
