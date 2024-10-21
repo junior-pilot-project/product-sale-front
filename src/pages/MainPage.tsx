@@ -1,64 +1,47 @@
 import Header from 'components/layout/Header';
 import styles from './MainPage.module.css';
-import { Link } from 'react-router-dom';
+import ProductSection from 'components/home/ProductSection';
+import { useEffect, useState } from 'react';
+import { productApi } from 'api';
+import { ProductListProps } from 'types/ResultDataType';
 
 const MainPage = () => {
+  const [productList, setProductList] = useState<ProductListProps[]>([]);
+
+  const getLoadData = async () => {
+    const param = {
+      take: 6,
+    };
+
+    try {
+      const data = await productApi(param);
+      setProductList(data);
+    } catch (error) {
+      console.error('데이터 로드가 실패했습니다:', error);
+    }
+  };
+
+  useEffect(() => {
+    getLoadData();
+  }, []);
+
   return (
     <>
       <Header></Header>
       <div>
         <img src={require('../assets/banner.jpg')} alt="오늘단하루 할인" />
       </div>
-      <div className={`${styles.mainContainer}`}>
+      <div className={`${styles['main-container']}`}>
         <div>
           <h2 className={`${styles.label}`}>
             HOT! TREND
             <br />
             카테고리별
-            <span className={`${styles.textBlue}`}> 추천 광고상품</span>
+            <span className={`${styles['text-blue']}`}> 추천 광고상품</span>
           </h2>
         </div>
-        <section className={`${styles.productSection}`}>
-          <div className={`${styles.productCategory}`}>여성패션</div>
-          <img src={require('../assets/product.png')} alt=""></img>
-          <div className={`${styles.productList}`}>
-            <Link to="/detail" className={`${styles.productBox}`}>
-              <div>
-                <img src={require('../assets/cloth1.png')} alt=""></img>
-                <div className={`${styles.productName}`}>roka 군인 옷</div>
-                <div className={`${styles.productPrice}`}>14,000원</div>
-              </div>
-            </Link>
-            <Link to="/detail" className={`${styles.productBox}`}>
-              <div>
-                <img src={require('../assets/cloth1.png')} alt=""></img>
-                <div className={`${styles.productName}`}>roka 군인 옷</div>
-                <div className={`${styles.productPrice}`}>14,000원</div>
-              </div>
-            </Link>
-            <Link to="/detail" className={`${styles.productBox}`}>
-              <div>
-                <img src={require('../assets/cloth1.png')} alt=""></img>
-                <div className={`${styles.productName}`}>roka 군인 옷</div>
-                <div className={`${styles.productPrice}`}>14,000원</div>
-              </div>
-            </Link>
-            <Link to="/detail" className={`${styles.productBox}`}>
-              <div>
-                <img src={require('../assets/cloth1.png')} alt=""></img>
-                <div className={`${styles.productName}`}>roka 군인 옷</div>
-                <div className={`${styles.productPrice}`}>14,000원</div>
-              </div>
-            </Link>
-            <Link to="/detail" className={`${styles.productBox}`}>
-              <div>
-                <img src={require('../assets/cloth1.png')} alt=""></img>
-                <div className={`${styles.productName}`}>roka 군인 옷</div>
-                <div className={`${styles.productPrice}`}>14,000원</div>
-              </div>
-            </Link>
-          </div>
-        </section>
+        <ProductSection label="여성패션" productList={productList} />
+        <ProductSection label="남성패션" productList={productList} />
       </div>
     </>
   );

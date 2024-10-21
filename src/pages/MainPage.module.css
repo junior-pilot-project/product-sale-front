@@ -1,49 +1,26 @@
-.mainContainer {
+.main-container {
   max-width: 1200px;
-  margin: 36px 20px;
+  margin: 36px auto;
 }
 
 .label {
   font-size: 24px;
 }
 
-.textBlue {
+.text-blue {
   color: #5b89ff;
 }
 
-.productSection {
-  display: flex;
-  margin: 30px;
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .main-container {
+    margin: 40px 100px;
+  }
 }
 
-.productList {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
-  gap: 20px;
-}
-
-.productBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.productCategory {
-  width: 200px;
-  font-size: 20px;
-  color: #fe2021;
-}
-
-.productName {
-  text-align: center;
-  margin-top: 10px;
-  color: #0073e9;
-  font-size: 17px;
-}
-
-.productPrice {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 20px;
+/* Mobile */
+@media (min-width: 365px) and (max-width: 767px) {
+  .main-container {
+    margin: 80px 100px;
+  }
 }

@@ -21,3 +21,14 @@ export type AddressListProps = {
   createdAt: string;
   updatedAt: string;
 };
+
+export type ProductListProps = {
+  productId: number;
+  productName: string;
+  productImageUrl: string;
+  productPrice: number;
+  productStatus: string;
+  createdUserId: string;
+  createdAt: string;
+  updatedAt: string;
+};
