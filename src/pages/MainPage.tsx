@@ -4,6 +4,17 @@ import ProductSection from 'components/home/ProductSection';
 import { useEffect, useState } from 'react';
 import { productApi } from 'api';
 import { ProductListProps } from 'types/ResultDataType';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+const banners = [
+  { src: require('../assets/banner.jpg'), alt: '오늘단하루 할인' },
+  { src: require('../assets/banner1.jpg'), alt: '비타민 브렌드데이' },
+  { src: require('../assets/banner3.jpg'), alt: '양반밥' },
+];
 
 const MainPage = () => {
   const [productList, setProductList] = useState<ProductListProps[]>([]);
@@ -29,7 +40,23 @@ const MainPage = () => {
     <>
       <Header></Header>
       <div>
-        <img src={require('../assets/banner.jpg')} alt="오늘단하루 할인" />
+        <Swiper
+          pagination={{
+            clickable: true,
+          }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          modules={[Navigation, Pagination, Autoplay]}
+          className="mySwiper"
+        >
+          {banners.map((banner, index) => (
+            <SwiperSlide key={index}>
+              <img src={banner.src} alt={banner.alt} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
       <div className={`${styles['main-container']}`}>
         <div>
