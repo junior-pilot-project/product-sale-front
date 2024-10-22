@@ -23,32 +23,42 @@ header a {
   background-color: #f0f0f0;
 }
 
-.headerMain {
+.header-main {
   gap: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-right: 20px;
 }
 
-.searchBox {
+.category-box {
+  position: relative;
+}
+
+.search-box {
   display: flex;
   align-items: center;
   position: relative;
-  margin-left: 10px;
   width: 518px;
   height: 46px;
 }
 
-.searchBtn {
+.search-btn {
   position: absolute;
-  background-image: url('../../assets/icon/search-btn.svg');
-  background-size: cover;
-  background-color: transparent;
   width: 30px;
-  height: 30px;
-  cursor: pointer;
+  margin-left: 10px;
 }
 
-.inputArea {
-  padding: 14px 28px;
+.input-area {
+  padding: 14px 35px;
+  border: 1px solid gray;
+  outline: none;
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1199px) {
+}
+
+/* Mobile */
+@media (min-width: 365px) and (max-width: 767px) {
 }

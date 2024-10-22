@@ -21,6 +21,6 @@
 /* Mobile */
 @media (min-width: 365px) and (max-width: 767px) {
   .main-container {
-    margin: 80px 100px;
+    margin: 80px 20px;
   }
 }
