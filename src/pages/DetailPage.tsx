@@ -2,66 +2,88 @@ import Header from 'components/layout/Header';
 import styles from './DetailPage.module.css';
 import Button from 'components/common/Button';
 import Modal from 'components/common/Modal';
-import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router';
+import { productApi } from 'api';
+import { ProductListProps } from 'types/ResultDataType';
+
+type Params = {
+  id: string; // id는 string으로 반드시 존재해야 한다고 정의
+};
 
 const DetailPage = () => {
   const navigate = useNavigate();
+  const { id } = useParams<Params>();
   const [onModal, setOnModal] = useState(false);
+  const [detailDt, setDetailDt] = useState<ProductListProps>();
 
   const onCloseModal = () => {
     setOnModal(false);
   };
+
+  useEffect(() => {
+    const getDetailData = async () => {
+      const param = {
+        productId: id,
+      };
+
+      const data = await productApi(param);
+      if (data) setDetailDt(data[0]);
+    };
+
+    getDetailData();
+  }, [id]);
 
   return (
     <>
       <Header></Header>
       <div className={`${styles.detailWrapper}`}>
         <div className={`${styles.detailContent}`}>
-          <img
-            src={require('../assets/cloth1.png')}
-            alt=""
-            style={{ width: '300px', height: '300px' }}
-          />
-          <div>
-            <div className={`${styles.productName}`}>
-              어택존 방한 기모 발열 목 폴라 로카 군인 티 남자 목티 긴팔 티셔츠
-            </div>
-            <div className={`${styles.price}`}>
-              <strong>15,850원</strong>
-            </div>
-            <div>
-              <Button
-                style={{
-                  width: '200px',
-                  height: '50px',
-                  backgroundColor: '#D9D9D9',
-                  color: 'black',
-                }}
-                onClick={() => setOnModal(true)}
-              >
-                쿠폰 다운로드
-              </Button>
-            </div>
-            <div>
-              <input className={`${styles.inputPrice}`} value="1"></input>
-            </div>
-            <div className={`${styles.buttonArea}`}>
-              <Button style={{ width: '200px', height: '50px' }}>
-                바로구매
-              </Button>
-              <Button
-                className={`${styles.whiteButton}`}
-                style={{
-                  width: '200px',
-                  height: '50px',
-                }}
-                onClick={() => navigate('/questionPage')}
-              >
-                문의하기
-              </Button>
-            </div>
-          </div>
+          {!detailDt ? ( // `undefined` 또는 `null`이면 메시지를 표시
+            <div>No product details available.</div>
+          ) : (
+            <>
+              <img
+                src={require('../assets/cloth1.png')}
+                alt=""
+                className={`${styles['detailcontent-image']}`}
+              />
+              <div>
+                <div className={`${styles.productName}`}>
+                  {detailDt.productName}
+                </div>
+                <div className={`${styles.price}`}>
+                  <strong>
+                    {Number(detailDt.productPrice).toLocaleString()}
+                  </strong>
+                  원
+                </div>
+                <div>
+                  <input className={`${styles.inputPrice}`} value="1"></input>
+                </div>
+                <div>
+                  <Button
+                    style={{
+                      backgroundColor: '#D9D9D9',
+                      color: 'black',
+                    }}
+                    onClick={() => setOnModal(true)}
+                  >
+                    쿠폰 다운로드
+                  </Button>
+                </div>
+                <div className={`${styles.buttonArea}`}>
+                  <Button>바로구매</Button>
+                  <Button
+                    className={`${styles.whiteButton}`}
+                    onClick={() => navigate('/questionPage')}
+                  >
+                    문의하기
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
         </div>
         <div>
           <div className={`${styles.menubar}`}>
@@ -225,6 +247,7 @@ const DetailPage = () => {
                 <div className={`${styles.reviewLitag}`}>
                   상품 색상 다른색상은 없나요?
                   <img
+                    className={`${styles['reviewLitag-button']}`}
                     src={require('../assets/icon/arrow.png')}
                     alt=""
                     width={'30px'}
@@ -236,6 +259,7 @@ const DetailPage = () => {
                 <div className={`${styles.reviewLitag}`}>
                   상품 색상 다른색상은 없나요?
                   <img
+                    className={`${styles['reviewLitag-button']}`}
                     src={require('../assets/icon/arrow.png')}
                     alt=""
                     width={'30px'}
@@ -247,6 +271,7 @@ const DetailPage = () => {
                 <div className={`${styles.reviewLitag}`}>
                   상품 색상 다른색상은 없나요?
                   <img
+                    className={`${styles['reviewLitag-button']}`}
                     src={require('../assets/icon/arrow.png')}
                     alt=""
                     width={'30px'}
@@ -258,31 +283,9 @@ const DetailPage = () => {
                 <div className={`${styles.reviewLitag}`}>
                   상품 색상 다른색상은 없나요?
                   <img
+                    className={`${styles['reviewLitag-button']}`}
                     src={require('../assets/icon/arrow.png')}
                     alt=""
-                    width={'30px'}
-                  />
-                </div>
-                <hr></hr>
-              </div>
-              <div className={`${styles.reviewListBox}`}>
-                <div className={`${styles.reviewLitag}`}>
-                  상품 색상 다른색상은 없나요?
-                  <img
-                    src={require('../assets/icon/arrow.png')}
-                    alt=""
-                    width={'30px'}
-                  />
-                </div>
-                <hr></hr>
-              </div>
-              <div className={`${styles.reviewListBox}`}>
-                <div className={`${styles.reviewLitag}`}>
-                  상품 색상 다른색상은 없나요?
-                  <img
-                    src={require('../assets/icon/arrow.png')}
-                    alt=""
-                    width={'30px'}
                   />
                 </div>
                 <hr></hr>

@@ -26,7 +26,7 @@ export type ProductListProps = {
   productId: number;
   productName: string;
   productImageUrl: string;
-  productPrice: number;
+  productPrice: string;
   productStatus: string;
   createdUserId: string;
   createdAt: string;

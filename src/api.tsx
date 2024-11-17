@@ -12,8 +12,9 @@ export const productApi = async ({
   productPrice = '',
   productName = '',
   sortBy = '',
+  productId = '',
 }) => {
-  const params = { take, productPrice, productName, sortBy };
+  const params = { take, productPrice, productName, sortBy, productId };
 
   try {
     const res = await axiosInstance.get(`${PROXY}/api/product`, { params });

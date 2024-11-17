@@ -1,22 +1,13 @@
 import { ProductListProps } from 'types/ResultDataType';
 import styles from './ProductSection.module.css';
-import { Link } from 'react-router-dom';
+import Product from './Product';
 
-const Product = ({ product }: any) => {
-  return (
-    <Link to="/detail" className={`${styles['product-box']}`}>
-      <div>
-        <img src={require('../../assets/cloth1.png')} alt=""></img>
-        <div className={`${styles['product-name']}`}>{product.productName}</div>
-        <div className={`${styles['product-price']}`}>
-          <strong>{product.productPrice}</strong>원
-        </div>
-      </div>
-    </Link>
-  );
-};
+interface ProductSectionProps {
+  label: string;
+  productList: ProductListProps[];
+}
 
-const ProductSection = ({ label, productList }: any) => {
+const ProductSection = ({ label, productList }: ProductSectionProps) => {
   const labelClass =
     label === '여성패션' ? styles['text-red'] : styles['text-blue'];
 

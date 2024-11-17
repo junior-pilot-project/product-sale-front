@@ -1,11 +1,17 @@
 .detailWrapper {
-  width: 800px;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: 36px auto;
 }
 
 .detailContent {
   display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 100px 20px;
+}
+
+.detailcontent-image {
+  width: 300px;
 }
 
 .productName {
@@ -119,6 +125,10 @@
   padding: 18px 0 18px;
 }
 
+.reviewLitag-button {
+  width: 20px;
+}
+
 .reviewListHiddenBox {
   height: 400px;
   background-color: #d9d9d9;
@@ -138,4 +148,26 @@
   margin: 0 24px;
   height: 50%;
   font-size: 14px;
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .detailWrapper {
+    margin: 40px 100px;
+  }
+
+  .detailContent {
+    display: block;
+  }
+}
+
+/* Mobile */
+@media (min-width: 365px) and (max-width: 767px) {
+  .detailWrapper {
+    margin: 80px 20px;
+  }
+
+  .detailContent {
+    display: block;
+  }
 }
